@@ -8,34 +8,61 @@
         <scene sceneID="RRb-sP-ScY">
             <objects>
                 <tableViewController storyboardIdentifier="TaskListViewController" id="cHj-kC-c5L" customClass="TaskListViewController" customModule="SwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="UkG-Fz-WhN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" id="UkG-Fz-WhN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" id="cf8-ac-ur6" customClass="TaskTableViewCell" customModule="SwiftDemo">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" rowHeight="95" id="cf8-ac-ur6" customClass="TaskTableViewCell" customModule="SwiftDemo">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cf8-ac-ur6" id="glJ-uP-wDg">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dr-SR-g9m">
-                                            <rect key="frame" x="262" y="1" width="38" height="41"/>
-                                            <state key="normal" image="nonactive.png">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <state key="selected" image="active.png"/>
-                                        </button>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ye-on-FeQ">
-                                            <rect key="frame" x="20" y="13" width="234" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="87n-aw-g7k">
+                                            <rect key="frame" x="20" y="5" width="280" height="85"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ye-on-FeQ">
+                                                    <rect key="frame" x="11" y="2" width="234" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95s-IE-hhh">
+                                                    <rect key="frame" x="35" y="30" width="234" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dr-SR-g9m">
+                                                    <rect key="frame" x="11" y="30" width="19" height="22"/>
+                                                    <state key="normal" image="nonactive.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected" image="active.png"/>
+                                                </button>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Delete" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU2-oA-EoO">
+                                                    <rect key="frame" x="35" y="60" width="234" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfu-Hl-049">
+                                                    <rect key="frame" x="11" y="60" width="19" height="22"/>
+                                                    <state key="normal" image="nonactive.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="selected" image="active.png"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="btnDelete" destination="bfu-Hl-049" id="yaE-2e-glb"/>
                                     <outlet property="btnIsCompleted" destination="4Dr-SR-g9m" id="rM2-PD-adv"/>
                                     <outlet property="lblTitle" destination="5ye-on-FeQ" id="a97-2w-NHM"/>
+                                    <outlet property="viewContainer" destination="87n-aw-g7k" id="dg2-LH-Vyg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -69,17 +96,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Task Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fd1-q3-IdT">
-                                <rect key="frame" x="104" y="101" width="196" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="44L-XR-Pef"/>
-                                </constraints>
+                                <rect key="frame" x="104" y="101" width="196" height="22"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkz-8a-nQ0">
-                                <rect key="frame" x="20" y="105" width="72" height="21"/>
+                                <rect key="frame" x="20" y="105" width="72" height="19"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="CWT-YP-I6l"/>
+                                    <constraint firstAttribute="width" constant="72" id="vxg-FJ-D7q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -88,13 +112,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ica-3d-KZi" firstAttribute="top" secondItem="fd1-q3-IdT" secondAttribute="bottom" constant="437" id="1PZ-tU-INZ"/>
-                            <constraint firstAttribute="trailing" secondItem="fd1-q3-IdT" secondAttribute="trailing" constant="20" symbolic="YES" id="NLF-DJ-BHR"/>
-                            <constraint firstItem="Fkz-8a-nQ0" firstAttribute="top" secondItem="ZAm-ly-QGU" secondAttribute="bottom" constant="41" id="Qv7-CZ-yER"/>
-                            <constraint firstItem="Ica-3d-KZi" firstAttribute="top" secondItem="Fkz-8a-nQ0" secondAttribute="bottom" constant="442" id="dGl-Tm-zho"/>
-                            <constraint firstItem="fd1-q3-IdT" firstAttribute="leading" secondItem="Fkz-8a-nQ0" secondAttribute="trailing" constant="12" id="gy1-tf-EIM"/>
-                            <constraint firstItem="Fkz-8a-nQ0" firstAttribute="leading" secondItem="N7u-dH-TpD" secondAttribute="leading" constant="20" symbolic="YES" id="oYF-9L-aQn"/>
-                            <constraint firstItem="fd1-q3-IdT" firstAttribute="top" secondItem="ZAm-ly-QGU" secondAttribute="bottom" constant="37" id="rZI-4z-4jJ"/>
+                            <constraint firstItem="fd1-q3-IdT" firstAttribute="leading" secondItem="Fkz-8a-nQ0" secondAttribute="trailing" constant="12" id="0Ow-hI-PLO"/>
+                            <constraint firstItem="Fkz-8a-nQ0" firstAttribute="leading" secondItem="N7u-dH-TpD" secondAttribute="leading" constant="20" symbolic="YES" id="C4S-hF-XSH"/>
+                            <constraint firstAttribute="trailing" secondItem="fd1-q3-IdT" secondAttribute="trailing" constant="20" symbolic="YES" id="MDp-Sv-eqs"/>
+                            <constraint firstItem="Fkz-8a-nQ0" firstAttribute="top" secondItem="ZAm-ly-QGU" secondAttribute="bottom" constant="41" id="Nmi-JT-tZe"/>
+                            <constraint firstItem="fd1-q3-IdT" firstAttribute="top" secondItem="ZAm-ly-QGU" secondAttribute="bottom" constant="37" id="zCa-gk-ah4"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -141,7 +163,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="active.png" width="38" height="41"/>
-        <image name="nonactive.png" width="38" height="41"/>
+        <image name="active.png" width="19" height="20"/>
+        <image name="nonactive.png" width="19" height="20"/>
     </resources>
 </document>

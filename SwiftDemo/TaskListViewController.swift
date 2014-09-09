@@ -30,10 +30,26 @@ class TaskListViewController: UITableViewController, NSFetchedResultsControllerD
         fetchedResultController = getFetchedResultController()
         fetchedResultController.delegate = self
         fetchedResultController.performFetch(nil)
+        
+        self.addSomeDummyData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func addSomeDummyData() {
+        
+        for (var i = 0; i <= 3; i++) {
+            
+            let entityDescripition = NSEntityDescription.entityForName("Task", inManagedObjectContext: managedObjectContext)
+            let task = Task(entity: entityDescripition, insertIntoManagedObjectContext: managedObjectContext)
+            task.title = "Task \(i)"
+            task.isCompleted = false
+        }
+        
+        managedObjectContext.save(nil)
+
     }
 
 //     #pragma mark - Table view data source
@@ -54,11 +70,15 @@ class TaskListViewController: UITableViewController, NSFetchedResultsControllerD
         var cell = tableView.dequeueReusableCellWithIdentifier("taskCell") as TaskTableViewCell
         let task = fetchedResultController.objectAtIndexPath(indexPath) as Task
         
+        cell.viewContainer.layer.borderColor = UIColor.blackColor().CGColor
+        cell.viewContainer.layer.borderWidth = 2.0
         
         cell.btnIsCompleted.selected = task.isCompleted.boolValue
         cell.btnIsCompleted.tag = indexPath.row
-        
         cell.btnIsCompleted.addTarget(self, action: Selector("btnIsCompletedClicked:"), forControlEvents: .TouchUpInside)
+
+        cell.btnDelete.tag = indexPath.row
+        cell.btnDelete.addTarget(self, action: Selector("btnDeleteClicked:"), forControlEvents: .TouchUpInside)
         
         cell.lblTitle.text = task.title
         
@@ -113,6 +133,26 @@ class TaskListViewController: UITableViewController, NSFetchedResultsControllerD
         }
     }
     
+    
+    func btnDeleteClicked(sender: AnyObject) {
+        
+        let button:UIButton = sender as UIButton
+        let indexPath = NSIndexPath(forRow: button.tag, inSection: 0)
+        
+        if !button.selected {
+            
+            let managedObject:Task = fetchedResultController.objectAtIndexPath(indexPath) as Task
+            
+            let alertTitle = "You just deleted: " + managedObject.title
+            
+            managedObjectContext.deleteObject(managedObject)
+            managedObjectContext.save(nil)
+            
+            showAlertViewWithMessage(alertTitle)
+            
+            self.tableView.reloadData()
+        }
+    }
     
     func showAlertViewWithMessage(message :String) {
         

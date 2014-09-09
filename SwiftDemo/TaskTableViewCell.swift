@@ -12,6 +12,8 @@ class TaskTableViewCell: UITableViewCell {
 
     
     
+    @IBOutlet var viewContainer : UIView
+    @IBOutlet var btnDelete : UIButton
     @IBOutlet var lblTitle : UILabel
     @IBOutlet var btnIsCompleted : UIButton
     
